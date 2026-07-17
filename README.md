@@ -34,10 +34,9 @@ Every push touching `src/` also builds all PDFs on GitHub Actions
    emphasis and ordering only.
 3. `make cv_<company>` and commit both the `.tex` and the PDF.
 
-## TODO (content was truncated in the original paste)
+## TODO
 
-- [ ] `[Company]` placeholder for the current role (Nov 2023 – Present) in all
-      three variants — fill in employer name, exact title, verify start date.
-- [ ] First bullet of that role was reconstructed from a cut-off sentence
-      ("…regulatory compliance.") — verify wording.
+- [ ] First bullet of the PwC Data Scientist entry (Nov 2023 – Jun 2025) was
+      reconstructed from a cut-off sentence ("…regulatory compliance.") —
+      verify wording.
 - [ ] Confirm header tagline in `cv_master.tex`.
