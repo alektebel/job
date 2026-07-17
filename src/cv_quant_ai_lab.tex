@@ -1,44 +1,26 @@
-% cv_quant_ai_lab.tex — tailored for Quant AI Lab (Data & AI Transformation:
-% applied GenAI, decision systems and optimization for banking/industry,
-% production-first, early-stage AI unit).
+% cv_quant_ai_lab.tex — variant for Quant AI Lab (Data & AI transformation,
+% applied AI for banking/industry).
 %
-% Tailoring strategy vs. master:
-%  - Positioned as an applied AI engineer who ships GenAI to production.
-%  - regllm.xyz promoted to the top (their pitch is literally "not PoCs,
-%    things that reach production" — this is the strongest proof).
-%  - Banking domain knowledge (LGD/IRB, FINREP/COREP) emphasized: they name
-%    banking as a target sector.
-%  - Open-source LLM-infrastructure work kept prominent (technical depth).
-%  - This is the CV Jordi asked for ahead of the Teams call on Wed 22 Jul.
+% Tailoring is ordering/emphasis only, same facts as cv_master.tex:
+%  - Projects (regllm first) placed before open source.
+%  - ML/GenAI first in the skills table.
 \documentclass[10pt,a4paper]{article}
 \usepackage{cvstyle}
 
 \begin{document}
 
 \cvheader{Diego Atencia}
-  {AI Engineer --- Applied GenAI for Banking \(\cdot\) LLMs \(\cdot\) RAG \(\cdot\) AWS}
+  {AI Engineering --- LLMs \(\cdot\) RAG \(\cdot\) AWS \(\cdot\) Banking Data}
   {Madrid, Spain \;\textbullet\; \href{mailto:dratencia@gmail.com}{dratencia@gmail.com} \;\textbullet\; +34 644 606 287}
   {\href{https://github.com/alektebel}{github.com/alektebel} \;\textbullet\; \href{https://alektebel.github.io}{alektebel.github.io} \;\textbullet\; \href{https://regllm.xyz}{regllm.xyz}}
 
 %--- SUMMARY ---
 \section{Summary}
-AI engineer who takes GenAI from idea to production: built and shipped
-\href{https://regllm.xyz}{regllm.xyz} end-to-end (LoRA-fine-tuned Qwen2.5-7B,
-RAG pipeline, full AWS deployment) and automated credit-risk model reporting
-with Copilot Studio inside a regulated bank. Deep banking domain --- IRB/LGD
-modeling and regulatory data (FINREP, COREP, CIRBE) --- on top of an M.Sc. in AI
-and a B.Sc. in Mathematics (UAM). Open-source contributor to LLM training
-infrastructure (Liger-Kernel, TorchRL).
-
-%--- FLAGSHIP PROJECT ---
-\section{Production GenAI}
-
-\noindent
-\textbf{\href{https://regllm.xyz/}{regllm.xyz}} --- GenAI app for Spanish banking regulation Q\&A \hfill \textit{Production, 2026}
-\begin{itemize}
-  \item Sole builder, idea to production: fine-tuned Qwen2.5-7B with LoRA on regulatory corpora; RAG pipeline with PostgreSQL/pgvector; full-stack AWS deployment (ECS Fargate, RDS, ALB).
-  \item Live in early access, serving real user queries (\textasciitilde30 to date) --- not a PoC.
-\end{itemize}
+M.Sc. in AI, B.Sc. in Mathematics (UAM). Experience in credit-risk (LGD/IRB)
+modeling and regulatory data pipelines (FINREP, COREP, CIRBE) in banking.
+Built and deployed \href{https://regllm.xyz}{regllm.xyz}, a GenAI application
+for Spanish banking regulation (LoRA fine-tuning, RAG, AWS). Open-source
+contributions to LLM and RL infrastructure (Liger-Kernel, TorchRL).
 
 %--- EXPERIENCE ---
 \section{Experience}
@@ -46,8 +28,8 @@ infrastructure (Liger-Kernel, TorchRL).
 % TODO(diego): replace [Company] and verify title/dates.
 \cventry{Data Scientist --- Credit Risk (IRB Models)}{Nov 2023 -- Present}{[Company] --- Madrid}
 \begin{itemize}
-  \item Built and validated LGD (Loss Given Default) models for IRB credit-risk portfolios, ensuring regulatory compliance. % TODO: reconstructed — verify
-  \item Put AI automation into production inside a bank: Power Automate/Copilot Studio workflows integrating LGD model outputs into structured Word reporting pipelines used by the risk team.
+  \item Built and validated LGD (Loss Given Default) credit-risk models for IRB portfolios, ensuring regulatory compliance. % TODO: reconstructed bullet — verify wording
+  \item Developed Power Automate/Copilot Studio workflows integrating LGD model outputs into structured Word reporting pipelines.
 \end{itemize}
 
 \vspace{4pt}
@@ -57,37 +39,47 @@ infrastructure (Liger-Kernel, TorchRL).
   \item Built scalable transformations within a large regulatory codebase, ensuring accurate and timely data delivery.
 \end{itemize}
 
+%--- SELECTED PROJECTS ---
+\section{Selected Projects}
+
+\noindent
+\textbf{\href{https://regllm.xyz/}{regllm.xyz}} --- GenAI app for Spanish banking regulation Q\&A \hfill \textit{Production, 2026}
+\begin{itemize}
+  \item Fine-tuned Qwen2.5-7B with LoRA; RAG pipeline; full-stack deployment on AWS (ECS Fargate, RDS/pgvector, ALB).
+  \item Built end-to-end; serving real user queries in early access (\textasciitilde30 to date).
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{Hand Prosthesis Control with Deep RL} --- \href{https://alektebel.github.io/blog/master-thesis-reinforcement-learning.html}{blog} \hfill \textit{M.Sc. thesis}
+\begin{itemize}
+  \item Multimodal RL agent (PPO/DDPG) integrating stereoscopic vision and sensor data for real-time prosthetic hand control in MuJoCo simulation.
+\end{itemize}
+
 %--- OPEN SOURCE ---
-\section{Open-Source Contributions (LLM \& RL Infrastructure)}
+\section{Open-Source Contributions}
 
 \noindent
 \textbf{Liger-Kernel} --- \href{https://github.com/linkedin/Liger-Kernel}{github.com/linkedin/Liger-Kernel} \hfill PR \#1128 (under review)\\
 \textit{Production CUDA kernel library for LLM training, used at scale across industry}
 \begin{itemize}
-  \item Debugging a distributed-training bug in \texttt{LigerTiledSwiGLUMLP}: FSDP post-backward reshard hooks fired prematurely inside a tiling loop, corrupting parameter shards across GPUs; adapting axolotl's gradient-accumulator approach as the fix.
+  \item Debugging a distributed-training bug in \texttt{LigerTiledSwiGLUMLP}: FSDP's post-backward reshard hooks were triggered prematurely inside a tiling loop, corrupting parameter shards across GPUs.
+  \item Adapting axolotl's gradient-accumulator approach as the fix.
 \end{itemize}
 
 \vspace{4pt}
 \noindent
-\textbf{TorchRL} --- \href{https://github.com/pytorch/rl}{github.com/pytorch/rl} \hfill Discussion \#3538
+\textbf{TorchRL} --- \href{https://github.com/pytorch/rl}{github.com/pytorch/rl} \hfill Discussion \#3538\\
+\textit{PyTorch RL library (Meta)}
 \begin{itemize}
-  \item Proposing and implementing MC-PILCO: model-based RL with Gaussian Process world models and Monte Carlo rollouts --- directly relevant to decision systems and optimization under uncertainty.
+  \item Proposing and implementing MC-PILCO: a model-based RL algorithm using Gaussian Process world models and Monte Carlo rollouts.
 \end{itemize}
 
 \vspace{4pt}
 \noindent
 \textbf{LEANN} \hfill Issue \#41
 \begin{itemize}
-  \item Proposed a hybrid BM25+RRF retrieval pipeline over a neural-only architecture to improve recall on sparse queries.
-\end{itemize}
-
-%--- OTHER PROJECTS ---
-\section{Other Projects}
-
-\noindent
-\textbf{Hand Prosthesis Control with Deep RL} --- \href{https://alektebel.github.io/blog/master-thesis-reinforcement-learning.html}{blog} \hfill \textit{M.Sc. thesis}
-\begin{itemize}
-  \item Multimodal RL agent (PPO/DDPG) integrating stereoscopic vision and sensor data for real-time prosthetic hand control in MuJoCo simulation.
+  \item Proposed a hybrid BM25+RRF retrieval pipeline over the neural-only architecture to improve recall on sparse queries.
 \end{itemize}
 
 %--- EDUCATION ---
@@ -105,10 +97,10 @@ infrastructure (Liger-Kernel, TorchRL).
 
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{} l X @{}}
-  \textbf{ML / GenAI}       & PyTorch, HuggingFace, LoRA/QLoRA, RAG pipelines, TensorFlow, Scikit-learn; RL (PPO/DDPG, model-based) \\
+  \textbf{ML / GenAI}       & PyTorch, TensorFlow, Scikit-learn, HuggingFace, LoRA/QLoRA, RAG pipelines \\
   \textbf{Languages}        & Python (expert), SQL (expert), C/C++ (strong) \\
-  \textbf{Cloud \& Systems} & AWS (ECS Fargate, RDS/pgvector, ALB), Docker, Linux, Git/GitHub, CI/CD; distributed training (FSDP/DDP), CUDA kernels \\
-  \textbf{Enterprise AI}    & Power Automate, Copilot Studio, document/reporting automation in regulated environments \\
+  \textbf{Systems \& Cloud} & AWS, Docker, Linux, Git/GitHub, CI/CD principles, distributed training (FSDP/DDP), CUDA kernels \\
+  \textbf{Automation}       & Power Automate, Copilot Studio \\
   \textbf{Databases}        & Oracle, PostgreSQL, ChromaDB (vector), SAS \\
 \end{tabularx}
 
