@@ -36,7 +36,5 @@ Every push touching `src/` also builds all PDFs on GitHub Actions
 
 ## TODO
 
-- [ ] First bullet of the PwC Data Scientist entry (Nov 2023 – Jun 2025) was
-      reconstructed from a cut-off sentence ("…regulatory compliance.") —
-      verify wording.
-- [ ] Confirm header tagline in `cv_master.tex`.
+- [ ] Add the direct Hugging Face model link for the Banking-Regulation LLM
+      project (marked with `% TODO` in each variant).
