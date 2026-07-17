@@ -1,0 +1,45 @@
+% cvstyle.sty — shared formatting for all CV variants.
+% Edit formatting here once; every variant picks it up.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cvstyle}[2026/07/17 Shared CV style]
+
+\RequirePackage[a4paper,margin=1.5cm,top=1.2cm,bottom=1.2cm]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{tabularx}
+\RequirePackage{titlesec}
+\RequirePackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\definecolor{cvaccent}{RGB}{25,55,95}
+
+% Compact bullet lists
+\setlist[itemize]{leftmargin=1.1em, topsep=2pt, itemsep=1pt, parsep=0pt,
+                  label=\textbullet, after=\vspace{2pt}}
+
+% Section headings: small caps with a rule
+% lmodern has no bold small caps — use plain small caps to avoid font substitution
+\titleformat{\section}{\color{cvaccent}\large\scshape}{}{0pt}{}[\vspace{-6pt}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+% Header: \cvheader{Name}{Tagline}{Contact line 1}{Contact line 2}
+\newcommand{\cvheader}[4]{%
+  \begin{center}
+    {\huge\bfseries #1}\\[3pt]
+    {\large\color{cvaccent} #2}\\[4pt]
+    {\small #3}\\[1pt]
+    {\small #4}
+  \end{center}
+  \vspace{-4pt}
+}
+
+% Entry heading: \cventry{Title}{Dates}{Org — Location}
+\newcommand{\cventry}[3]{%
+  \noindent\textbf{#1} \hfill \textit{#2}\\
+  \textit{#3}%
+}

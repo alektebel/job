@@ -1,0 +1,111 @@
+% cv_master.tex — general-purpose CV (the "source of truth").
+% Tailored variants (cv_saragossa_*.tex, cv_quant_*.tex) are derived from this one.
+%
+% TODO(diego): the original CV paste was truncated at the top. Verify:
+%   1. The tagline below.
+%   2. Your current employer name + exact title + start date (placeholder used).
+%   3. The first bullet of the current role (reconstructed from a partial sentence).
+\documentclass[10pt,a4paper]{article}
+\usepackage{cvstyle}
+
+\begin{document}
+
+\cvheader{Diego Atencia}
+  {Machine Learning Engineer --- Banking Data \& GenAI}
+  {Madrid, Spain \;\textbullet\; \href{mailto:dratencia@gmail.com}{dratencia@gmail.com} \;\textbullet\; +34 644 606 287}
+  {\href{https://github.com/alektebel}{github.com/alektebel} \;\textbullet\; \href{https://alektebel.github.io}{alektebel.github.io} \;\textbullet\; \href{https://regllm.xyz}{regllm.xyz}}
+
+%--- SUMMARY ---
+\section{Summary}
+Mathematician (UAM) turned ML engineer with 3+ years across banking data and AI:
+regulatory data pipelines (Oracle, T-SQL), IRB credit-risk modeling (LGD), and
+production GenAI (LoRA fine-tuning, RAG, AWS). Open-source contributor to LLM
+training infrastructure (Liger-Kernel, TorchRL).
+
+%--- EXPERIENCE ---
+\section{Experience}
+
+% TODO(diego): replace [Company] and verify title/dates — header was cut off in the source paste.
+\cventry{Data Scientist --- Credit Risk (IRB Models)}{Nov 2023 -- Present}{[Company] --- Madrid}
+\begin{itemize}
+  \item Built and validated LGD (Loss Given Default) credit-risk models for IRB portfolios, ensuring regulatory compliance. % TODO: reconstructed bullet — verify wording
+  \item Developed Power Automate/Copilot Studio workflows integrating LGD model outputs into structured Word reporting pipelines.
+\end{itemize}
+
+\vspace{4pt}
+\cventry{SQL \& PL/SQL Developer}{Oct 2022 -- Nov 2023}{Álamo Consulting --- Madrid}
+\begin{itemize}
+  \item Owned regulatory reporting pipelines (FINREP, COREP, SIRBE/CIRBE) for an external banking entity using Oracle and T-SQL.
+  \item Built scalable transformations within a large regulatory codebase, ensuring accurate and timely data delivery.
+\end{itemize}
+
+%--- OPEN SOURCE ---
+\section{Open-Source Contributions}
+
+\noindent
+\textbf{Liger-Kernel} --- \href{https://github.com/linkedin/Liger-Kernel}{github.com/linkedin/Liger-Kernel} \hfill PR \#1128 (under review)\\
+\textit{Production CUDA kernel library for LLM training, used at scale across industry}
+\begin{itemize}
+  \item Debugging a distributed-training bug in \texttt{LigerTiledSwiGLUMLP}: FSDP's post-backward reshard hooks were triggered prematurely inside a tiling loop, corrupting parameter shards across GPUs.
+  \item Adapting axolotl's gradient-accumulator approach as the fix.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{TorchRL} --- \href{https://github.com/pytorch/rl}{github.com/pytorch/rl} \hfill Discussion \#3538\\
+\textit{PyTorch RL library (Meta)}
+\begin{itemize}
+  \item Proposing and implementing MC-PILCO: a model-based RL algorithm using Gaussian Process world models and Monte Carlo rollouts.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{LEANN} \hfill Issue \#41
+\begin{itemize}
+  \item Proposed a hybrid BM25+RRF retrieval pipeline over the neural-only architecture to improve recall on sparse queries.
+\end{itemize}
+
+%--- SELECTED PROJECTS ---
+\section{Selected Projects}
+
+\noindent
+\textbf{\href{https://regllm.xyz/}{regllm.xyz}} --- GenAI app for Spanish banking regulation Q\&A \hfill \textit{Production, 2026}
+\begin{itemize}
+  \item Fine-tuned Qwen2.5-7B with LoRA; RAG pipeline; full-stack deployment on AWS (ECS Fargate, RDS/pgvector, ALB).
+  \item Built and shipped end-to-end; serving real user queries in early access (\textasciitilde30 to date).
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{Hand Prosthesis Control with Deep RL} --- \href{https://alektebel.github.io/blog/master-thesis-reinforcement-learning.html}{blog} \hfill \textit{M.Sc. thesis}
+\begin{itemize}
+  \item Multimodal RL agent (PPO/DDPG) integrating stereoscopic vision and sensor data for real-time prosthetic hand control in MuJoCo simulation.
+\end{itemize}
+
+%--- EDUCATION ---
+\section{Education}
+
+\cventry{M.Sc. in Artificial Intelligence (8.67/10)}{Sep 2024 -- Oct 2025}{International University of Valencia}
+\par Thesis: \emph{Optimizing low-cost hand prosthesis control using Deep Reinforcement Learning}, multimodal architecture integrating stereoscopic vision and tactile sensors.
+
+\vspace{4pt}
+\cventry{B.Sc. in Mathematics}{Sep 2018 -- Jun 2023}{Autonomous University of Madrid (UAM)}
+\par Final thesis: Weak solutions to Navier--Stokes equations (9/10). Founder of university AI student association (70+ members). Rugby team member.
+
+%--- TECHNICAL SKILLS ---
+\section{Technical Skills}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+  \textbf{Languages}        & Python (expert), C/C++ (strong), SQL (expert) \\
+  \textbf{Systems \& Cloud} & AWS, Docker, Linux, Git/GitHub, CI/CD principles, distributed training (FSDP/DDP), CUDA kernels \\
+  \textbf{Databases}        & Oracle, PostgreSQL, ChromaDB (vector), SAS \\
+  \textbf{ML / GenAI}       & PyTorch, TensorFlow, Scikit-learn, HuggingFace, LoRA/QLoRA, RAG pipelines \\
+  \textbf{CS Fundamentals}  & Data structures \& algorithms, OOP, distributed systems, debugging complex systems, code review \\
+\end{tabularx}
+
+%--- LANGUAGES ---
+\section{Languages}
+Spanish (native) \quad English (fluent, professional working proficiency) \quad Mandarin Chinese (learning)
+
+\end{document}

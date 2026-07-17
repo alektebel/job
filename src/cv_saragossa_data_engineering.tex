@@ -1,0 +1,102 @@
+% cv_saragossa_data_engineering.tex — tailored for the Saragossa-sourced
+% elite Data Engineering role (Madrid, investment/trading environment).
+%
+% Tailoring strategy vs. master:
+%  - Positioned as Data Engineer; summary targets investment data platforms.
+%  - Pipeline-ownership bullets lead; banking/regulatory data emphasized
+%    (their JD lists investment banks / fintech as relevant backgrounds).
+%  - Education pulled up and grades surfaced (they screen hard on academics:
+%    top Spanish university, quantitative degree — UAM Mathematics fits).
+%  - SQL/Python/AWS lead the skills table; distributed-systems depth
+%    (FSDP/CUDA open-source work) kept as evidence of large-scale thinking.
+%  - NOTE: no Databricks/PySpark claims are invented. That is the one JD gap —
+%    close it before interviews rather than on paper.
+\documentclass[10pt,a4paper]{article}
+\usepackage{cvstyle}
+
+\begin{document}
+
+\cvheader{Diego Atencia}
+  {Data Engineer --- SQL \(\cdot\) Python \(\cdot\) AWS \(\cdot\) Banking Data Platforms}
+  {Madrid, Spain \;\textbullet\; \href{mailto:dratencia@gmail.com}{dratencia@gmail.com} \;\textbullet\; +34 644 606 287}
+  {\href{https://github.com/alektebel}{github.com/alektebel} \;\textbullet\; \href{https://alektebel.github.io}{alektebel.github.io}}
+
+%--- SUMMARY ---
+\section{Summary}
+Data engineer with a B.Sc. in Mathematics (UAM) and end-to-end ownership of
+business-critical banking data pipelines: regulatory reporting (FINREP, COREP,
+CIRBE) on Oracle/T-SQL, delivered on hard supervisory deadlines. Expert SQL and
+strong Python; production AWS experience (ECS Fargate, RDS, ALB) from shipping
+my own full-stack product, and distributed-systems depth from open-source work
+on multi-GPU training internals (FSDP, CUDA). Based in Madrid, full-time on-site.
+
+%--- EXPERIENCE ---
+\section{Experience}
+
+% TODO(diego): replace [Company] and verify title/dates.
+\cventry{Data Scientist --- Credit Risk (IRB Models)}{Nov 2023 -- Present}{[Company] --- Madrid}
+\begin{itemize}
+  \item Built and validated LGD (Loss Given Default) models for IRB credit-risk portfolios under regulatory compliance requirements --- data-quality-critical work where pipeline errors carry supervisory consequences. % TODO: reconstructed — verify
+  \item Automated model-output delivery: Power Automate/Copilot Studio workflows turning LGD model outputs into structured, audit-ready reporting pipelines.
+\end{itemize}
+
+\vspace{4pt}
+\cventry{SQL \& PL/SQL Developer}{Oct 2022 -- Nov 2023}{Álamo Consulting --- Madrid}
+\begin{itemize}
+  \item Owned end-to-end regulatory reporting pipelines (FINREP, COREP, SIRBE/CIRBE) for a banking client on Oracle and T-SQL --- business-critical deliveries to the regulator with zero tolerance for late or inaccurate data.
+  \item Designed scalable transformations inside a large legacy regulatory codebase; accountable for accuracy and timeliness of every delivery cycle.
+\end{itemize}
+
+%--- EDUCATION (surfaced early: quantitative degree, top Spanish university) ---
+\section{Education}
+
+\cventry{B.Sc. in Mathematics}{Sep 2018 -- Jun 2023}{Autonomous University of Madrid (UAM)}
+\par Final thesis: \emph{Weak solutions to Navier--Stokes equations} (9/10). Founder of the university AI student association (70+ members).
+
+\vspace{4pt}
+\cventry{M.Sc. in Artificial Intelligence (8.67/10)}{Sep 2024 -- Oct 2025}{International University of Valencia}
+\par Thesis: deep reinforcement learning for real-time prosthetic hand control (multimodal vision + sensor architecture).
+
+%--- SYSTEMS & OPEN SOURCE ---
+\section{Distributed Systems \& Open Source}
+
+\noindent
+\textbf{Liger-Kernel} --- \href{https://github.com/linkedin/Liger-Kernel}{github.com/linkedin/Liger-Kernel} \hfill PR \#1128 (under review)\\
+\textit{Production CUDA kernel library for LLM training, used at scale across industry}
+\begin{itemize}
+  \item Debugging a distributed-training bug in \texttt{LigerTiledSwiGLUMLP}: FSDP post-backward reshard hooks fired prematurely inside a tiling loop, corrupting parameter shards across GPUs --- root-caused across the FSDP/kernel boundary.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{LEANN} \hfill Issue \#41
+\begin{itemize}
+  \item Proposed a hybrid BM25+RRF retrieval pipeline over a neural-only architecture to improve recall on sparse queries.
+\end{itemize}
+
+%--- SELECTED PROJECT ---
+\section{Selected Project}
+
+\noindent
+\textbf{\href{https://regllm.xyz/}{regllm.xyz}} --- full-stack data/AI product on AWS \hfill \textit{Production, 2026}
+\begin{itemize}
+  \item Built and operate the entire platform solo: ingestion and RAG data pipeline over Spanish banking regulation, PostgreSQL/pgvector store, fine-tuned LLM serving, deployed on AWS (ECS Fargate, RDS, ALB); serving real users in early access.
+\end{itemize}
+
+%--- TECHNICAL SKILLS ---
+\section{Technical Skills}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+  \textbf{Core}             & SQL (expert: Oracle PL/SQL, T-SQL, PostgreSQL), Python (expert), C/C++ (strong) \\
+  \textbf{Data \& Cloud}    & AWS (ECS Fargate, RDS, ALB), Docker, Linux, Git/GitHub, CI/CD; data modeling, batch pipeline design, data-quality controls \\
+  \textbf{Distributed}      & Multi-GPU training internals (FSDP/DDP), CUDA kernels, debugging complex concurrent systems \\
+  \textbf{Databases}        & Oracle, PostgreSQL (+pgvector), ChromaDB, SAS \\
+  \textbf{Fundamentals}     & Data structures \& algorithms, OOP, distributed systems, code review \\
+\end{tabularx}
+
+%--- LANGUAGES ---
+\section{Languages}
+Spanish (native) \quad English (fluent, professional working proficiency)
+
+\end{document}
