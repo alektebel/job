@@ -2,7 +2,7 @@
 % applied AI for banking/industry).
 %
 % Tailoring is ordering/emphasis only, same facts as cv_master.tex:
-%  - Projects (regllm first) placed before open source.
+%  - Projects (banking-regulation LLM first) placed before open source.
 %  - ML/GenAI first in the skills table.
 \documentclass[10pt,a4paper]{article}
 \usepackage{cvstyle}
@@ -18,8 +18,9 @@
 \section{Summary}
 M.Sc. in AI, B.Sc. in Mathematics (UAM). Experience in credit-risk (LGD/IRB)
 modeling and regulatory data pipelines (FINREP, COREP, CIRBE) in banking.
-Built and deployed \href{https://regllm.xyz}{regllm.xyz}, a GenAI application
-for Spanish banking regulation (LoRA fine-tuning, RAG, AWS). Open-source
+Fine-tuned and published an LLM for Spanish banking regulation Q\&A
+(Qwen2.5-7B, LoRA; on Hugging Face) and built the RAG application and AWS
+deployment around it. Open-source
 contributions to LLM and RL infrastructure (Liger-Kernel, TorchRL).
 
 %--- EXPERIENCE ---
@@ -50,10 +51,10 @@ contributions to LLM and RL infrastructure (Liger-Kernel, TorchRL).
 \section{Selected Projects}
 
 \noindent
-\textbf{\href{https://regllm.xyz/}{regllm.xyz}} --- GenAI app for Spanish banking regulation Q\&A \hfill \textit{Production, 2026}
+\textbf{Banking-Regulation LLM} --- fine-tuned model for Spanish banking regulation Q\&A \hfill \textit{2025--2026}
 \begin{itemize}
-  \item Fine-tuned Qwen2.5-7B with LoRA; RAG pipeline; full-stack deployment on AWS (ECS Fargate, RDS/pgvector, ALB).
-  \item Built end-to-end; serving real user queries in early access (\textasciitilde30 to date).
+  \item Fine-tuned Qwen2.5-7B with LoRA on regulatory corpora; model published on Hugging Face. % TODO(diego): add direct Hugging Face model link
+  \item Built the full application around it: RAG pipeline and AWS deployment (ECS Fargate, RDS/pgvector, ALB); served real user queries during early access.
 \end{itemize}
 
 \vspace{4pt}
